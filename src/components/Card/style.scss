@@ -1,0 +1,71 @@
+.card-component {
+  background-color: #fff;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  padding: 20px;
+  min-width: 260px;
+  box-sizing: border-box;
+  .row-1 {
+    .head-info {
+      .logo {
+        margin-right: 10px;
+        img {
+        }
+      }
+      .name-block {
+        .name {
+          font-size: 1rem;
+          font-weight: 500;
+          margin: 0;
+          color: #111;
+        }
+        .fullname {
+          font-size: 0.8571rem;
+          color: #8b8e99;
+        }
+      }
+    }
+  }
+  .row-2 {
+    .price {
+      font-size: 1.286rem;
+      font-weight: 700;
+      color: #111;
+    }
+  }
+  .row-3 {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    .change-24h {
+      .value {
+        font-weight: 700;
+        margin: 0;
+        &.price-up {
+          color: #4fbd00;
+        }
+        &.price-down {
+          color: #ff1255;
+        }
+        svg {
+          margin-left: 5px;
+        }
+      }
+      .label {
+        color: #8b8e99;
+        margin: 0;
+      }
+    }
+    .volumn-24h {
+      .value {
+        font-weight: 700;
+        margin: 0;
+        color: #111;
+      }
+      .label {
+        color: #8b8e99;
+        margin: 0;
+      }
+    }
+  }
+}
