@@ -5,5 +5,10 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    @media only screen and (max-width: 539px) {
+      padding-top: 20px;
+    }
   }
 }
