@@ -1,17 +1,27 @@
 import { useEffect } from 'react'
 import { useStoreState, useStoreActions } from 'easy-peasy'
+import { useDispatch, useSelector } from 'react-redux'
 import _ from 'lodash'
 import Card from 'components/Card'
 import './style.scss'
 
 function Home() {
-  const items = useStoreState(state => state.cryptocurrency.items)
-  const getItems = useStoreActions(actions => actions.cryptocurrency.getItems)
-  const getItemsFormSocket = useStoreActions(actions => actions.cryptocurrency.getItemsFormSocket)
+  const dispatch = useDispatch()
+
+  const items = useSelector(state => state.cryptocurrency.items)
+
+  // const items = useStoreState(state => state.cryptocurrency.items)
+  // const getItems = useStoreActions(actions => actions.cryptocurrency.getItems)
+  // const getItemsFormSocket = useStoreActions(actions => actions.cryptocurrency.getItemsFormSocket)
+
+  // useEffect(() => {
+  //   getItems()
+  //   getItemsFormSocket()
+  // }, [])
 
   useEffect(() => {
-    getItems()
-    getItemsFormSocket()
+    dispatch({ type: 'ITEMS_FETCH_REQUESTED' })
+    dispatch({ type: 'ITEMS_SOCKET_REQUESTED' })
   }, [])
 
   return (
